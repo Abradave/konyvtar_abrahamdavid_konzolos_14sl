@@ -15,6 +15,7 @@ namespace KonyvtarAsztaliKonzolos
             Statisztika.moreThenFiveHundredPages();
             Statisztika.olderThenNineteenFifty();
             Statisztika.longestBook();
+            Statisztika.mostOwnedBook();
             Statisztika.whoIsTheAuthor();
             Console.ReadKey();
         }

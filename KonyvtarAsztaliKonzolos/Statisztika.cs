@@ -93,9 +93,18 @@ namespace KonyvtarAsztaliKonzolos
                                 $"\tOldalszám: {page}");
         }
         public static void mostOwnedBook() {
+            var authors = new Dictionary<string, int>();
             foreach (var item in book)
             {
+                if (!authors.ContainsKey(item.Author))
+                {
+                    authors.Add(item.Author, 1);
+                }
+                authors[item.Author]++;
             }
+            string mostBooks = authors.OrderByDescending(x => x.Value).FirstOrDefault().Key;
+            Console.WriteLine("A legtöbb könnyvel rendelkező szerző: " + mostBooks);
+
         }
         public static void whoIsTheAuthor() {
             Console.Write("Adjon meg egy könyv címet: ");
